@@ -1,0 +1,40 @@
+
+======================== //******* MisMatched Objects Are *********** \ ==========================
+
+
+******************* MIS-MATCHED-OBJECTS-IN-NEW-JSON******************
+{"Policy_CAP":{"pattern":"^[0-9]+(\\.[0-9]+)?$|^$","type":"string","maxLength":13}}
+{"Class_Code_Description":{"type":"string","maxLength":70}}
+{"Nature_of_Business":{"type":"string","maxLength":30}}
+
+
+******************* MIS-MATCHED-OBJECTS-IN-OLD-JSON******************
+{"Policy_Cap":{"pattern":"^[0-9]+(\\.[0-9]+)?$|^$","type":"string","maxLength":13}}
+{"Class_Code_Description":{"type":"string","maxLength":60}}
+{"Nature_Of_Business":{"type":"string","maxLength":30}}
+
+
+******************* OBJECTS NOT FOUND IN NEW JSON ******************
+{"Carrier_Underwriting_Company":{"type":"string","maxLength":80}}
+
+
+*******************COUNT OF FOUND OBJECTS******************
+65
+
+
+******************* MIS-MATCHED-REQUIRED-FIELDS-IN-NEW-JSON******************
+End_Flag
+Locations
+Policy_Coverage
+Policy_States
+Program_Number
+Alternate_Name
+
+
+******************* MIS-MATCHED-REQUIRED-FIELDS-IN-OLD-JSON******************
+ Sorry Nothing to show..!!
+
+
+*******************COUNT OF NOT-FOUND REQUIRED FIELDS IN BOTH JSONS******************
+6
+

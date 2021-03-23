@@ -1,0 +1,418 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"id": "http://json-schema.org/draft-07/schema#",
+	"title": "Policy",
+	"description": "Policy Object",
+	"type": "object",
+	"required": [
+		"End_Flag",
+		"File_Format_Version",
+		"Location_Parent_AHSId",
+		"Contract_Number",
+		"Carrier_Number",
+		"Policy_AHS_ID",
+		"Policy_Number",
+		"Policy_Effective_Date",
+		"Policy_Expiration_Date",
+		"Service_Layer",
+		"Service_Type",
+		"Locations",
+		"Policy_Coverage"
+	],
+	"properties": {
+		"End_Flag": {
+			"type": "string",
+			"enum": [
+				"Y",
+				"N"
+			]
+		},
+		"File_Format_Version": {
+			"type": "string",
+			"enum": [
+				"1.23"
+			]
+		},
+		"Location_Parent_AHSId": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 10,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$"
+		},
+		"Policy_AHS_ID": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 10,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$"
+		},
+		"Contract_Number": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 10,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$"
+		},
+		"Policy_Number": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 40
+		},
+		"Policy_Effective_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+		},
+		"Policy_Expiration_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+		},
+		"Cancellation_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$|^$"
+		},
+		"Service_Layer": {
+			"type": "string",
+			"enum": [
+				"E",
+				"P"
+			]
+		},
+		"Service_Type": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 2
+		},
+		"Policy_CAP": {
+			"type": "string",
+			"maxLength": 13,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+		},
+		"Policy_Loss_Limit": {
+			"type": "string",
+			"maxLength": 13,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+		},
+		"Policy_Coverage": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [
+					"Coverage_Type",
+					"Coverage_Effective_Date",
+					"Coverage_Expiration_Date",
+					"Policy_States"
+				],
+				"properties": {
+					"Coverage_Type": {
+						"type": "string",
+						"minLength": 1,
+						"maxLength": 30
+					},
+					"Coverage_Effective_Date": {
+						"type": "string",
+						"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+					},
+					"Coverage_Expiration_Date": {
+						"type": "string",
+						"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+					},
+					"Self_Insured_Retention": {
+						"type": "string",
+						"maxLength": 13,
+						"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+					},
+					"Large_Deductible": {
+						"type": "string",
+						"maxLength": 13,
+						"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+					},
+					"Policy_States": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"required": [
+								"Policy_Coverage_State"
+							],
+							"properties": {
+								"Policy_Coverage_State": {
+									"type": "string",
+									"minLength": 1,
+									"maxLength": 2
+								},
+								"Policy_Class_Code": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"Class_Code": {
+												"type": "string",
+												"maxLength": 4
+											},
+											"Class_Code_Description": {
+												"type": "string",
+												"maxLength": 70
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"Carrier_Underwriting_Company_Name": {
+			"type": "string",
+			"maxLength": 80
+		},
+		"Carrier_Number": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 30
+		},
+		"Agent_Producer_Code": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"Agent_Name": {
+			"type": "string",
+			"maxLength": 41
+		},
+		"Agent_Address": {
+			"type": "string",
+			"maxLength": 41
+		},
+		"Agent_City": {
+			"type": "string",
+			"maxLength": 41
+		},
+		"Agent_State": {
+			"type": "string",
+			"maxLength": 2
+		},
+		"Agent_Zip_Code": {
+			"type": "string",
+			"maxLength": 9
+		},
+		"Agent_Phone": {
+			"type": "string",
+			"maxLength": 14
+		},
+		"Agent_Fax": {
+			"type": "string",
+			"maxLength": 10
+		},
+		"Agent_Email": {
+			"type": "string",
+			"maxLength": 80
+		},
+		"Data_Outsource_Code": {
+			"type": "string",
+			"enum": [
+				"MARNO"
+			]
+		},
+		"Locations": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [
+					"Location_Name",
+					"Location_Type",
+					"Location_Status",
+					"Location_Code",
+					"Program_Number"
+				],
+				"properties": {
+					"Location_Name": {
+						"type": "string",
+						"minLength": 1,
+						"maxLength": 50
+					},
+					"Location_Address": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"Location_Address2": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"Location_City": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"Location_State": {
+						"type": "string",
+						"maxLength": 2
+					},
+					"Location_Zip": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"Location_County": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"Location_Country": {
+						"type": "string",
+						"enum": [
+							"US",
+							"CA"
+						]
+					},
+					"Location_Type": {
+						"type": "string",
+						"enum": [
+							"INSURED",
+							"RISK LOCATION"
+						]
+					},
+					"Nature_of_Business": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"Location_Status": {
+						"type": "string",
+						"enum": [
+							"ACTIVE",
+							"DEACTIVATED"
+						]
+					},
+					"Location_Code": {
+						"type": "string",
+						"minLength": 1,
+						"maxLength": 30
+					},
+					"Location_Phone": {
+						"type": "string",
+						"maxLength": 14
+					},
+					"Location_Fax": {
+						"type": "string",
+						"maxLength": 10
+					},
+					"Location_Line_Of_Business": {
+						"type": "string",
+						"maxLength": 3
+					},
+					"Location_Line_Of_Business2": {
+						"type": "string",
+						"maxLength": 3
+					},
+					"Location_Line_Of_Business3": {
+						"type": "string",
+						"maxLength": 3
+					},
+					"Location_Effective_Date": {
+						"type": "string",
+						"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$|^$"
+					},
+					"Location_Expiration_Date": {
+						"type": "string",
+						"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$|^$"
+					},
+					"Location_Source_Code": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"Location_Account_Group": {
+						"type": "string",
+						"maxLength": 15
+					},
+					"Location_Loc_Name": {
+						"type": "string",
+						"maxLength": 80
+					},
+					"Email_Address": {
+						"type": "string",
+						"maxLength": 255
+					},
+					"Location_Alternate_Name": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"required": [
+								"Alternate_Name"
+							],
+							"properties": {
+								"Alternate_Name": {
+									"type": "string",
+									"maxLength": 80
+								}
+							}
+						}
+					},
+					"FEIN": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"FEIN_Code": {
+									"type": "string",
+									"maxLength": 10
+								},
+								"FEIN_Description": {
+									"type": "string",
+									"maxLength": 60
+								}
+							}
+						}
+					},
+					"SIC": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"SIC_Code": {
+									"type": "string",
+									"maxLength": 6
+								},
+								"SIC_Description": {
+									"type": "string",
+									"maxLength": 30
+								}
+							}
+						}
+					},
+					"NAICS": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"NAICS_Code": {
+									"type": "string",
+									"maxLength": 6
+								},
+								"NAICS_Description": {
+									"type": "string",
+									"maxLength": 30
+								}
+							}
+						}
+					},
+					"Program_Number": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"required": [
+								"Location_Program_Number"
+							],
+							"properties": {
+								"Location_Program_Number": {
+									"type": "string",
+									"minLength": 1,
+									"maxLength": 6
+								}
+							}
+						}
+					},
+					"Monthly_Report": {
+						"type": "string",
+						"enum": [
+							"Y",
+							"N"
+						]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,323 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"id": "http://json-schema.org/draft-07/schema#",
+	"title": "Policy",
+	"description": "Policy Object",
+	"type": "object",
+	"properties": {
+		"File_Format_Version": {
+			"type": "string",
+			"enum": [
+				"1.23"
+			]
+		},
+		"Policy_AHS_ID": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 10,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$"
+		},
+		"Location_Parent_AHSId": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 10,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$"
+		},
+		"Contract_Number": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 10,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$"
+		},
+		"Carrier_Number": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 30
+		},
+		"Location_Program_Number": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 6
+		},
+		"Policy_Number": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 40
+		},
+		"Policy_Effective_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+		},
+		"Policy_Expiration_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+		},
+		"Cancellation_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$|^$"
+		},
+		"Service_Layer": {
+			"type": "string",
+			"enum": [
+				"E",
+				"P"
+			]
+		},
+		"Service_Type": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 2
+		},
+		"Policy_Cap": {
+			"type": "string",
+			"maxLength": 13,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+		},
+		"Policy_Loss_Limit": {
+			"type": "string",
+			"maxLength": 13,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+		},
+		"Coverage_Type": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 30
+		},
+		"Coverage_Effective_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+		},
+		"Coverage_Expiration_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$"
+		},
+		"Self_Insured_Retention": {
+			"type": "string",
+			"maxLength": 13,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+		},
+		"Large_Deductible": {
+			"type": "string",
+			"maxLength": 13,
+			"pattern": "^[0-9]+(\\.[0-9]+)?$|^$"
+		},
+		"Policy_Coverage_State": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 2
+		},
+		"Carrier_Underwriting_Company": {
+			"type": "string",
+			"maxLength": 80
+		},
+		"Class_Code": {
+			"type": "string",
+			"maxLength": 4
+		},
+		"Class_Code_Description": {
+			"type": "string",
+			"maxLength": 60
+		},
+		"Agent_Producer_Code": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"Agent_Name": {
+			"type": "string",
+			"maxLength": 41
+		},
+		"Agent_Address": {
+			"type": "string",
+			"maxLength": 41
+		},
+		"Agent_City": {
+			"type": "string",
+			"maxLength": 41
+		},
+		"Agent_State": {
+			"type": "string",
+			"maxLength": 2
+		},
+		"Agent_Zip_Code": {
+			"type": "string",
+			"maxLength": 9
+		},
+		"Agent_Phone": {
+			"type": "string",
+			"maxLength": 14
+		},
+		"Agent_Fax": {
+			"type": "string",
+			"maxLength": 10
+		},
+		"Agent_Email": {
+			"type": "string",
+			"maxLength": 80
+		},
+		"Location_Name": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 50
+		},
+		"Location_Address": {
+			"type": "string",
+			"maxLength": 50
+		},
+		"Location_Address2": {
+			"type": "string",
+			"maxLength": 50
+		},
+		"Location_City": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"Location_State": {
+			"type": "string",
+			"maxLength": 2
+		},
+		"Location_Zip": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"Location_County": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"Location_Country": {
+			"type": "string",
+			"enum": [
+				"US",
+				"CA"
+			]
+		},
+		"Location_Type": {
+			"type": "string",
+			"enum": [
+				"INSURED",
+				"RISK LOCATION"
+			]
+		},
+		"Nature_Of_Business": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"Location_Status": {
+			"type": "string",
+			"enum": [
+				"ACTIVE",
+				"DEACTIVATED"
+			]
+		},
+		"Location_Code": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 30
+		},
+		"Location_Phone": {
+			"type": "string",
+			"maxLength": 14
+		},
+		"Location_Fax": {
+			"type": "string",
+			"maxLength": 10
+		},
+		"FEIN_Code": {
+			"type": "string",
+			"maxLength": 10
+		},
+		"FEIN_Description": {
+			"type": "string",
+			"maxLength": 60
+		},
+		"SIC_Code": {
+			"type": "string",
+			"maxLength": 6
+		},
+		"SIC_Description": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"NAICS_Code": {
+			"type": "string",
+			"maxLength": 6
+		},
+		"NAICS_Description": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"Monthly_Report": {
+			"type": "string",
+			"enum": [
+				"Y",
+				"N"
+			]
+		},
+		"Location_Line_Of_Business": {
+			"type": "string",
+			"maxLength": 3
+		},
+		"Location_Line_Of_Business2": {
+			"type": "string",
+			"maxLength": 3
+		},
+		"Location_Line_Of_Business3": {
+			"type": "string",
+			"maxLength": 3
+		},
+		"Location_Effective_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$|^$"
+		},
+		"Location_Expiration_Date": {
+			"type": "string",
+			"pattern": "^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$|^$"
+		},
+		"Location_Source_Code": {
+			"type": "string",
+			"maxLength": 30
+		},
+		"Location_Account_Group": {
+			"type": "string",
+			"maxLength": 15
+		},
+		"Data_Outsource_Code": {
+			"type": "string",
+			"enum": [
+				"MARNO"
+			]
+		},
+		"Alternate_Name": {
+			"type": "string",
+			"maxLength": 80
+		},
+		"Location_Loc_Name": {
+			"type": "string",
+			"maxLength": 80
+		},
+		"Email_Address": {
+			"type": "string",
+			"maxLength": 255
+		}
+	},
+	"required": [
+		"File_Format_Version",
+		"Location_Parent_AHSId",
+		"Contract_Number",
+		"Carrier_Number",
+		"Location_Program_Number",
+		"Policy_AHS_ID",
+		"Policy_Number",
+		"Policy_Effective_Date",
+		"Policy_Expiration_Date",
+		"Service_Layer",
+		"Service_Type",
+		"Coverage_Type",
+		"Coverage_Effective_Date",
+		"Coverage_Expiration_Date",
+		"Policy_Coverage_State",
+		"Location_Name",
+		"Location_Type",
+		"Location_Status",
+		"Location_Code"
+	]
+}
